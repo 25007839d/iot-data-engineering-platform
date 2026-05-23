@@ -1,0 +1,32 @@
+[
+  {
+    "name": "machine_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "machine_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "location",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "machine_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "install_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,57 @@
+name: Terraform Deploy
+
+on:
+
+  push:
+
+    branches:
+      - main
+
+jobs:
+
+  terraform:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    defaults:
+      run:
+        working-directory: terraform
+
+    steps:
+
+      - name: Checkout Code
+
+        uses: actions/checkout@v4
+
+      - name: Authenticate to GCP
+
+        uses: google-github-actions/auth@v2
+
+        with:
+          workload_identity_provider: projects/953364833508/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+
+          service_account: iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com
+
+      - name: Setup Terraform
+
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+
+        run: terraform init
+
+      - name: Terraform Validate
+
+        run: terraform validate
+
+      - name: Terraform Plan
+
+        run: terraform plan
+
+      - name: Terraform Apply
+
+        run: terraform apply -auto-approve

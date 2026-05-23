@@ -1,0 +1,32 @@
+[
+  {
+    "name": "alert_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "machine_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "risk_level",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prediction_score",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "predicted_issue",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "alert_time",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  }
+]

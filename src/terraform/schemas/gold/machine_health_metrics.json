@@ -1,0 +1,22 @@
+[
+  {
+    "name": "machine_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "avg_temperature",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "health_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "report_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  }
+]
