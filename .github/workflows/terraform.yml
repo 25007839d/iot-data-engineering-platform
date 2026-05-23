@@ -19,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: terraform
+        working-directory: src/terraform
 
     steps:
 
