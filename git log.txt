@@ -1,0 +1,392 @@
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .github/
+        .gitignore
+        .idea/
+        README.md
+        src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git add .
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git commit -m "added new folder"
+[master (root-commit) d4befd3] added new folder
+ 36 files changed, 1290 insertions(+)
+ create mode 100644 .github/workflows/terraform.yml
+ create mode 100644 .gitignore
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/inspectionProfiles/Project_Default.xml
+ create mode 100644 .idea/inspectionProfiles/profiles_settings.xml
+ create mode 100644 .idea/iot_api.iml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 README.md
+ create mode 100644 src/README.md
+ create mode 100644 src/docs/Gcp Iot Data Engineering Architecture Detailed.md
+ create mode 100644 src/docs/dk-iot.pptx
+ create mode 100644 src/flask_api/app.py
+ create mode 100644 src/flask_api/requirements.txt
+ create mode 100644 src/terraform/bigquery.tf
+ create mode 100644 src/terraform/composer.tf
+ create mode 100644 src/terraform/gcs.tf
+ create mode 100644 src/terraform/iam.tf
+ create mode 100644 src/terraform/main.tf
+ create mode 100644 src/terraform/outputs.tf
+ create mode 100644 src/terraform/provider.tf
+ create mode 100644 src/terraform/pubsub.tf
+ create mode 100644 src/terraform/schemas/__init__.py
+ create mode 100644 src/terraform/schemas/bronze/__init__.py
+ create mode 100644 src/terraform/schemas/bronze/machine_master_raw.json
+ create mode 100644 src/terraform/schemas/bronze/sensor_data_raw.json
+ create mode 100644 src/terraform/schemas/gold/__init__.py
+ create mode 100644 src/terraform/schemas/gold/machine_health_metrics.json
+ create mode 100644 src/terraform/schemas/gold/predictive_alerts.json
+ create mode 100644 src/terraform/schemas/silver/__init__.py
+ create mode 100644 src/terraform/schemas/silver/machine_master.json
+ create mode 100644 src/terraform/schemas/silver/sensor_data.json
+ create mode 100644 src/terraform/service_account.tf
+ create mode 100644 src/terraform/terraform.tfvars
+ create mode 100644 src/terraform/variables.tf
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git push -u origin  main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git push -u origin  master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git push -u  master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git checkount main
+git: 'checkount' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git remote -v
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git remote add origin https://github.com/25007839d/iot-data-engineering-platform.git
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git remote -v
+origin  https://github.com/25007839d/iot-data-engineering-platform.git (fetch)
+origin  https://github.com/25007839d/iot-data-engineering-platform.git (push)
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git branch -M main
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin main --force
+Enumerating objects: 45, done.
+Counting objects: 100% (45/45), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (39/39), done.
+Writing objects: 100% (45/45), 5.89 MiB | 324.00 KiB/s, done.
+Total 45 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+ + 4282bde...d4befd3 main -> main (forced update)
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git commit -m "added new folder"
+[main 05a5fa1] added new folder
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin main --force
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 606 bytes | 606.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+   d4befd3..05a5fa1  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ gcloud services enable iam.googleapis.com pubsub.googleapis.com bigquery.googleapis.com storage.googleapis.com composer.googleapis.com dataflow.googleapis.com dataproc.googleapis.com cloudresourcemanager.googleapis.com iamcredentials.googleapis.com
+Operation "operations/acf.p2-953364833508-09327de7-d30e-421c-b690-31ccb5fd0d5f" finished successfully.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/terraform/schema/__init__.py
+        new file:   src/terraform/schema/bronze/__init__.py
+        new file:   src/terraform/schema/bronze/machine_master_raw.json
+        new file:   src/terraform/schema/bronze/sensor_data_raw.json
+        new file:   src/terraform/schema/gold/__init__.py
+        new file:   src/terraform/schema/gold/machine_health_metrics.json
+        new file:   src/terraform/schema/gold/predictive_alerts.json
+        new file:   src/terraform/schema/silver/__init__.py
+        new file:   src/terraform/schema/silver/machine_master.json
+        new file:   src/terraform/schema/silver/sensor_data.json
+        new file:   terraform.yaml
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/terraform/schema/bronze/machine_master_raw.json
+        modified:   src/terraform/schema/bronze/sensor_data_raw.json
+        modified:   src/terraform/schema/gold/machine_health_metrics.json
+        modified:   src/terraform/schema/gold/predictive_alerts.json
+        modified:   src/terraform/schema/silver/machine_master.json
+        modified:   src/terraform/schema/silver/sensor_data.json
+        modified:   terraform.yaml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        src/terraform/bigquery.tf
+        src/terraform/composer.tf
+        src/terraform/gcs.tf
+        src/terraform/iam.tf
+        src/terraform/main.tf
+        src/terraform/outputs.tf
+        src/terraform/provider.tf
+        src/terraform/pubsub.tf
+        src/terraform/service_account.tf
+        src/terraform/terraform.tfvars
+        src/terraform/variables.tf
+
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git commit -m "initial infra deployed"
+[main 254b72b] initial infra deployed
+ 22 files changed, 578 insertions(+)
+ create mode 100644 src/terraform/bigquery.tf
+ create mode 100644 src/terraform/composer.tf
+ create mode 100644 src/terraform/gcs.tf
+ create mode 100644 src/terraform/iam.tf
+ create mode 100644 src/terraform/main.tf
+ create mode 100644 src/terraform/outputs.tf
+ create mode 100644 src/terraform/provider.tf
+ create mode 100644 src/terraform/pubsub.tf
+ create mode 100644 src/terraform/schema/__init__.py
+ create mode 100644 src/terraform/schema/bronze/__init__.py
+ create mode 100644 src/terraform/schema/bronze/machine_master_raw.json
+ create mode 100644 src/terraform/schema/bronze/sensor_data_raw.json
+ create mode 100644 src/terraform/schema/gold/__init__.py
+ create mode 100644 src/terraform/schema/gold/machine_health_metrics.json
+ create mode 100644 src/terraform/schema/gold/predictive_alerts.json
+ create mode 100644 src/terraform/schema/silver/__init__.py
+ create mode 100644 src/terraform/schema/silver/machine_master.json
+ create mode 100644 src/terraform/schema/silver/sensor_data.json
+ create mode 100644 src/terraform/service_account.tf
+ create mode 100644 src/terraform/terraform.tfvars
+ create mode 100644 src/terraform/variables.tf
+ create mode 100644 terraform.yaml
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin  main
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (25/25), 3.93 KiB | 575.00 KiB/s, done.
+Total 25 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+   38e896d..254b72b  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/terraform/composer.tf
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git commit -m "initial infra deployed"
+[main 4282bde] initial infra deployed
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin  main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 494 bytes | 494.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+   254b72b..4282bde  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+warning: LF will be replaced by CRLF in src/terraform/.terraform.lock.hcl.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/LICENSE.txt.
+warning: LF will be replaced by CRLF in src/terraform/terraform.tfstate.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/terraform/terraform.tfstate.backup.
+The file will have its original line endings in your working directory
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git commit -m "initial infra deployed"
+[main 6f3cea6] initial infra deployed
+ 18 files changed, 3147 insertions(+), 36 deletions(-)
+ rename terraform.yaml => .github/workflows/terraform.yml (61%)
+ create mode 100644 src/terraform/.terraform.lock.hcl
+ create mode 100644 src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/LICENSE.txt
+ create mode 100644 src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/terraform-provider-google_v5.45.2_x5.exe
+ rename src/terraform/{schema => schemas}/__init__.py (100%)
+ rename src/terraform/{schema => schemas}/bronze/__init__.py (100%)
+ rename src/terraform/{schema => schemas}/bronze/machine_master_raw.json (100%)
+ rename src/terraform/{schema => schemas}/bronze/sensor_data_raw.json (100%)
+ rename src/terraform/{schema => schemas}/gold/__init__.py (100%)
+ rename src/terraform/{schema => schemas}/gold/machine_health_metrics.json (100%)
+ rename src/terraform/{schema => schemas}/gold/predictive_alerts.json (100%)
+ rename src/terraform/{schema => schemas}/silver/__init__.py (100%)
+ rename src/terraform/{schema => schemas}/silver/machine_master.json (100%)
+ rename src/terraform/{schema => schemas}/silver/sensor_data.json (100%)
+ create mode 100644 src/terraform/terraform.tfstate
+ create mode 100644 src/terraform/terraform.tfstate.backup
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin  main
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (21/21), 27.79 MiB | 386.00 KiB/s, done.
+Total 21 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote: error: Trace: e1a23b372c3ad3381fa85dd97f45e97a26b56bff883d55f99df67b79208cc36e
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/terraform-provider-google_v5.45.2_x5.exe is 100.48 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/25007839d/iot-data-engineering-platform.git'
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git commit -m "initial infra deployed"
+[main 78ef653] initial infra deployed
+ 1 file changed, 20 insertions(+)
+ create mode 100644 .gitignore
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin  main
+Enumerating objects: 29, done.
+Counting objects: 100% (29/29), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (24/24), 27.79 MiB | 319.00 KiB/s, done.
+Total 24 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 3 local objects.
+remote: error: Trace: 1c6116618eb31b397a7bab8f25e3847a9f15de3680a90ae226e091e11dab7d94
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/terraform-provider-google_v5.45.2_x5.exe is 100.48 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/25007839d/iot-data-engineering-platform.git'
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ ^C
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git commit -m "initial infra deployed"
+[main 4202a11] initial infra deployed
+ 4 files changed, 3077 deletions(-)
+ delete mode 100644 src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/LICENSE.txt
+ delete mode 100644 src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/terraform-provider-google_v5.45.2_x5.exe
+ delete mode 100644 src/terraform/terraform.tfstate
+ delete mode 100644 src/terraform/terraform.tfstate.backup
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git push -u origin  main
+Enumerating objects: 33, done.
+Counting objects: 100% (33/33), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (28/28), 27.79 MiB | 379.00 KiB/s, done.
+Total 28 (delta 8), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (8/8), completed with 3 local objects.
+remote: error: Trace: a8df090b8cbe20147102666a16875f5733e3e197299ff88cbfd6a46b4d10e71c
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/terraform-provider-google_v5.45.2_x5.exe is 100.48 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/25007839d/iot-data-engineering-platform.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/25007839d/iot-data-engineering-platform.git'
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ Remove-Item -Recurse -Force .git
+bash: Remove-Item: command not found
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (main)
+$ git add .
+fatal: in unpopulated submodule 'iot-data-engineering-platform'
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)
+$ git init
+Initialized empty Git repository in D:/Socourse/DE1/iot_api_dk/iot-data-engineering-platform/.git/
+
+RITU@DESKTOP-9ABLJB5 MINGW64 /d/Socourse/DE1/iot_api_dk/iot-data-engineering-platform (master)

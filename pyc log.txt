@@ -1,0 +1,1119 @@
+
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "install_date"
+                  + type = "DATE"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "updated_at"
+                  + type = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "machine_master"
+      + terraform_labels                = (known after apply)
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.machine_master_raw will be created
+  + resource "google_bigquery_table" "machine_master_raw" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "bronze"
+      + deletion_protection             = false
+      + effective_labels                = (known after apply)
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "project-7792d7ca-4ff6-4f52-91b"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "NULLABLE"
+                  + name = "machine_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "machine_name"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "location"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "machine_type"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "install_date"
+                  + type = "DATE"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "uploaded_at"
+                  + type = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "machine_master_raw"
+      + terraform_labels                = (known after apply)
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.predictive_alerts will be created
+  + resource "google_bigquery_table" "predictive_alerts" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "gold"
+      + deletion_protection             = false
+      + effective_labels                = (known after apply)
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "project-7792d7ca-4ff6-4f52-91b"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "NULLABLE"
+                  + name = "alert_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "machine_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "risk_level"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "prediction_score"
+                  + type = "FLOAT"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "predicted_issue"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "alert_time"
+                  + type = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "predictive_alerts"
+      + terraform_labels                = (known after apply)
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.sensor_data will be created
+  + resource "google_bigquery_table" "sensor_data" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "silver"
+      + deletion_protection             = false
+      + effective_labels                = (known after apply)
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "project-7792d7ca-4ff6-4f52-91b"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "NULLABLE"
+                  + name = "event_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "machine_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "temperature"
+                  + type = "FLOAT"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "vibration"
+                  + type = "INTEGER"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "current_value"
+                  + type = "FLOAT"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "event_time"
+                  + type = "TIMESTAMP"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "processed_time"
+                  + type = "TIMESTAMP"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "sensor_data"
+      + terraform_labels                = (known after apply)
+      + type                            = (known after apply)
+    }
+
+  # google_bigquery_table.sensor_data_raw will be created
+  + resource "google_bigquery_table" "sensor_data_raw" {
+      + allow_resource_tags_on_deletion = false
+      + creation_time                   = (known after apply)
+      + dataset_id                      = "bronze"
+      + deletion_protection             = false
+      + effective_labels                = (known after apply)
+      + etag                            = (known after apply)
+      + expiration_time                 = (known after apply)
+      + id                              = (known after apply)
+      + last_modified_time              = (known after apply)
+      + location                        = (known after apply)
+      + num_bytes                       = (known after apply)
+      + num_long_term_bytes             = (known after apply)
+      + num_rows                        = (known after apply)
+      + project                         = "project-7792d7ca-4ff6-4f52-91b"
+      + schema                          = jsonencode(
+            [
+              + {
+                  + mode = "NULLABLE"
+                  + name = "event_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "machine_id"
+                  + type = "STRING"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "temperature"
+                  + type = "FLOAT"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "vibration"
+                  + type = "INTEGER"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "current_value"
+                  + type = "FLOAT"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "event_time"
+                  + type = "TIMESTAMP"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "ingestion_time"
+                  + type = "TIMESTAMP"
+                },
+              + {
+                  + mode = "NULLABLE"
+                  + name = "raw_payload"
+                  + type = "STRING"
+                },
+            ]
+        )
+      + self_link                       = (known after apply)
+      + table_id                        = "sensor_data_raw"
+      + terraform_labels                = (known after apply)
+      + type                            = (known after apply)
+    }
+
+  # google_project_iam_member.bigquery_admin will be created
+  + resource "google_project_iam_member" "bigquery_admin" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/bigquery.admin"
+    }
+
+  # google_project_iam_member.composer_roles["roles/artifactregistry.reader"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/artifactregistry.reader"
+    }
+
+  # google_project_iam_member.composer_roles["roles/bigquery.connectionUser"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/bigquery.connectionUser"
+    }
+
+  # google_project_iam_member.composer_roles["roles/bigquery.jobUser"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/bigquery.jobUser"
+    }
+
+  # google_project_iam_member.composer_roles["roles/cloudfunctions.invoker"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/cloudfunctions.invoker"
+    }
+
+  # google_project_iam_member.composer_roles["roles/composer.worker"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/composer.worker"
+    }
+
+  # google_project_iam_member.composer_roles["roles/dataflow.developer"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataflow.developer"
+    }
+
+  # google_project_iam_member.composer_roles["roles/dataflow.worker"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataflow.worker"
+    }
+
+  # google_project_iam_member.composer_roles["roles/dataproc.editor"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataproc.editor"
+    }
+
+  # google_project_iam_member.composer_roles["roles/dataproc.worker"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataproc.worker"
+    }
+
+  # google_project_iam_member.composer_roles["roles/iam.serviceAccountUser"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/iam.serviceAccountUser"
+    }
+
+  # google_project_iam_member.composer_roles["roles/run.invoker"] will be created
+  + resource "google_project_iam_member" "composer_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/run.invoker"
+    }
+
+  # google_project_iam_member.dataflow_admin will be created
+  + resource "google_project_iam_member" "dataflow_admin" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataflow.admin"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/bigquery.dataEditor"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/bigquery.dataEditor"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/bigquery.jobUser"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/bigquery.jobUser"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/dataproc.editor"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataproc.editor"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/dataproc.worker"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataproc.worker"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/logging.logWriter"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/logging.logWriter"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/monitoring.metricWriter"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/monitoring.metricWriter"
+    }
+
+  # google_project_iam_member.dataproc_job_roles["roles/storage.objectAdmin"] will be created
+  + resource "google_project_iam_member" "dataproc_job_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/storage.objectAdmin"
+    }
+
+  # google_project_iam_member.pubsub_admin will be created
+  + resource "google_project_iam_member" "pubsub_admin" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/pubsub.admin"
+    }
+
+  # google_project_iam_member.storage_admin will be created
+  + resource "google_project_iam_member" "storage_admin" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/storage.admin"
+    }
+
+  # google_pubsub_subscription.iot_stream_subscription will be created
+  + resource "google_pubsub_subscription" "iot_stream_subscription" {
+      + ack_deadline_seconds       = (known after apply)
+      + effective_labels           = (known after apply)
+      + id                         = (known after apply)
+      + message_retention_duration = "604800s"
+      + name                       = "iot-stream-subscription"
+      + project                    = "project-7792d7ca-4ff6-4f52-91b"
+      + terraform_labels           = (known after apply)
+      + topic                      = "iot-stream-topic"
+
+      + expiration_policy (known after apply)
+    }
+
+  # google_pubsub_topic.iot_stream_topic will be created
+  + resource "google_pubsub_topic" "iot_stream_topic" {
+      + effective_labels = (known after apply)
+      + id               = (known after apply)
+      + name             = "iot-stream-topic"
+      + project          = "project-7792d7ca-4ff6-4f52-91b"
+      + terraform_labels = (known after apply)
+
+      + message_storage_policy (known after apply)
+
+      + schema_settings (known after apply)
+    }
+
+  # google_service_account.composer_service_account will be created
+  + resource "google_service_account" "composer_service_account" {
+      + account_id   = "composer-service-account"
+      + disabled     = false
+      + display_name = "Composer Service Account"
+      + email        = (known after apply)
+      + id           = (known after apply)
+      + member       = (known after apply)
+      + name         = (known after apply)
+      + project      = "project-7792d7ca-4ff6-4f52-91b"
+      + unique_id    = (known after apply)
+    }
+
+  # google_service_account.dataproc_job_sa will be created
+  + resource "google_service_account" "dataproc_job_sa" {
+      + account_id   = "dataproc-job-sa"
+      + disabled     = false
+      + display_name = "Dataproc Job Service Account"
+      + email        = (known after apply)
+      + id           = (known after apply)
+      + member       = (known after apply)
+      + name         = (known after apply)
+      + project      = "project-7792d7ca-4ff6-4f52-91b"
+      + unique_id    = (known after apply)
+    }
+
+  # google_service_account.iot_platform_sa will be created
+  + resource "google_service_account" "iot_platform_sa" {
+      + account_id   = "iot-platform-sa"
+      + disabled     = false
+      + display_name = "IoT Platform Service Account"
+      + email        = (known after apply)
+      + id           = (known after apply)
+      + member       = (known after apply)
+      + name         = (known after apply)
+      + project      = "project-7792d7ca-4ff6-4f52-91b"
+      + unique_id    = (known after apply)
+    }
+
+  # google_storage_bucket.iot_data_lake will be created
+  + resource "google_storage_bucket" "iot_data_lake" {
+      + effective_labels            = (known after apply)
+      + force_destroy               = true
+      + id                          = (known after apply)
+      + location                    = "ASIA"
+      + name                        = "iot-data-lake-dk"
+      + project                     = (known after apply)
+      + project_number              = (known after apply)
+      + public_access_prevention    = (known after apply)
+      + rpo                         = (known after apply)
+      + self_link                   = (known after apply)
+      + storage_class               = "STANDARD"
+      + terraform_labels            = (known after apply)
+      + uniform_bucket_level_access = true
+      + url                         = (known after apply)
+
+      + soft_delete_policy (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+Plan: 37 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + service_account_email = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+google_pubsub_topic.iot_stream_topic: Creating...
+google_bigquery_dataset.gold: Creating...
+google_bigquery_dataset.silver: Creating...
+google_service_account.dataproc_job_sa: Creating...
+google_bigquery_dataset.bronze: Creating...
+google_service_account.composer_service_account: Creating...
+google_storage_bucket.iot_data_lake: Creating...
+google_service_account.iot_platform_sa: Creating...
+google_bigquery_dataset.gold: Creation complete after 3s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/gold]
+google_bigquery_table.predictive_alerts: Creating...
+google_bigquery_table.machine_health_metrics: Creating...
+google_bigquery_dataset.silver: Creation complete after 4s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/silver]
+google_bigquery_table.machine_master: Creating...
+google_bigquery_table.sensor_data: Creating...
+google_storage_bucket.iot_data_lake: Creation complete after 4s [id=iot-data-lake-dk]
+google_bigquery_table.predictive_alerts: Creation complete after 1s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/gold/tables/predictive_alerts]
+google_bigquery_dataset.bronze: Creation complete after 4s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/bronze]
+google_bigquery_table.sensor_data_raw: Creating...
+google_bigquery_table.machine_master_raw: Creating...
+google_bigquery_table.machine_health_metrics: Creation complete after 1s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/gold/tables/machine_health_metrics]
+google_bigquery_table.machine_master: Creation complete after 0s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/silver/tables/machine_master]
+google_bigquery_table.sensor_data: Creation complete after 0s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/silver/tables/sensor_data]
+google_bigquery_table.sensor_data_raw: Creation complete after 1s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/bronze/tables/sensor_data_raw]
+google_bigquery_table.machine_master_raw: Creation complete after 1s [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/bronze/tables/machine_master_raw]
+google_service_account.composer_service_account: Still creating... [00m10s elapsed]
+google_service_account.dataproc_job_sa: Still creating... [00m10s elapsed]
+google_pubsub_topic.iot_stream_topic: Still creating... [00m10s elapsed]
+google_service_account.iot_platform_sa: Still creating... [00m10s elapsed]
+google_service_account.iot_platform_sa: Creation complete after 15s [id=projects/project-7792d7ca-4ff6-4f52-91b/serviceAccounts/iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.pubsub_admin: Creating...
+google_project_iam_member.storage_admin: Creating...
+google_project_iam_member.dataflow_admin: Creating...
+google_project_iam_member.bigquery_admin: Creating...
+google_service_account.dataproc_job_sa: Creation complete after 16s [id=projects/project-7792d7ca-4ff6-4f52-91b/serviceAccounts/dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/bigquery.dataEditor"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/logging.logWriter"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/bigquery.jobUser"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/monitoring.metricWriter"]: Creating...
+google_service_account.composer_service_account: Creation complete after 17s [id=projects/project-7792d7ca-4ff6-4f52-91b/serviceAccounts/composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/dataproc.worker"]: Creating...
+google_pubsub_topic.iot_stream_topic: Still creating... [00m20s elapsed]
+google_project_iam_member.pubsub_admin: Still creating... [00m10s elapsed]
+google_project_iam_member.storage_admin: Still creating... [00m10s elapsed]
+google_project_iam_member.bigquery_admin: Still creating... [00m10s elapsed]
+google_project_iam_member.dataflow_admin: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/dataproc.worker"]: Creation complete after 9s [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.worker/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]     
+google_project_iam_member.dataproc_job_roles["roles/storage.objectAdmin"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/bigquery.jobUser"]: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/logging.logWriter"]: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/bigquery.dataEditor"]: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/monitoring.metricWriter"]: Still creating... [00m10s elapsed]
+google_project_iam_member.pubsub_admin: Creation complete after 11s [id=project-7792d7ca-4ff6-4f52-91b/roles/pubsub.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/dataproc.editor"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/logging.logWriter"]: Creation complete after 11s [id=project-7792d7ca-4ff6-4f52-91b/roles/logging.logWriter/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/bigquery.jobUser"]: Creating...
+google_project_iam_member.storage_admin: Creation complete after 13s [id=project-7792d7ca-4ff6-4f52-91b/roles/storage.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataflow.worker"]: Creating...
+google_project_iam_member.dataflow_admin: Creation complete after 14s [id=project-7792d7ca-4ff6-4f52-91b/roles/dataflow.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataproc.editor"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/bigquery.dataEditor"]: Creation complete after 13s [id=project-7792d7ca
+-4ff6-4f52-91b/roles/bigquery.dataEditor/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/bigquery.connectionUser"]: Creating...
+google_pubsub_topic.iot_stream_topic: Still creating... [00m30s elapsed]
+google_project_iam_member.bigquery_admin: Creation complete after 15s [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/composer.worker"]: Creating...
+google_pubsub_topic.iot_stream_topic: Creation complete after 30s [id=projects/project-7792d7ca-4ff6-4f52-91b/topics/iot-stream-topic]
+google_project_iam_member.composer_roles["roles/run.invoker"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/bigquery.jobUser"]: Creation complete after 15s [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.jobUser/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]  
+google_project_iam_member.composer_roles["roles/cloudfunctions.invoker"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/monitoring.metricWriter"]: Creation complete after 16s [id=project-7792
+d7ca-4ff6-4f52-91b/roles/monitoring.metricWriter/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/iam.serviceAccountUser"]: Creating...
+google_project_iam_member.dataproc_job_roles["roles/storage.objectAdmin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/dataproc.editor"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/bigquery.jobUser"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/dataflow.worker"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/dataproc.editor"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/dataproc.editor"]: Creation complete after 10s [id=project-7792d7ca-4ff6-4f
+52-91b/roles/dataproc.editor/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataproc.worker"]: Creating...
+google_project_iam_member.composer_roles["roles/bigquery.connectionUser"]: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/dataproc.editor"]: Creation complete after 14s [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.editor/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]    
+google_project_iam_member.composer_roles["roles/dataflow.developer"]: Creating...
+google_project_iam_member.composer_roles["roles/composer.worker"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/run.invoker"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/bigquery.jobUser"]: Creation complete after 14s [id=project-7792d7ca-4ff6-4
+f52-91b/roles/bigquery.jobUser/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/artifactregistry.reader"]: Creating...
+google_project_iam_member.composer_roles["roles/cloudfunctions.invoker"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/iam.serviceAccountUser"]: Still creating... [00m10s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/storage.objectAdmin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/dataflow.worker"]: Still creating... [00m20s elapsed]
+google_project_iam_member.dataproc_job_roles["roles/storage.objectAdmin"]: Creation complete after 22s [id=project-7792d7ca
+-4ff6-4f52-91b/roles/storage.objectAdmin/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_pubsub_subscription.iot_stream_subscription: Creating...
+google_project_iam_member.composer_roles["roles/dataflow.worker"]: Creation complete after 21s [id=project-7792d7ca-4ff6-4f
+52-91b/roles/dataflow.worker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataproc.worker"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/bigquery.connectionUser"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/dataflow.developer"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/composer.worker"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/run.invoker"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/artifactregistry.reader"]: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/cloudfunctions.invoker"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/iam.serviceAccountUser"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/iam.serviceAccountUser"]: Creation complete after 24s [id=project-7792d7ca-
+4ff6-4f52-91b/roles/iam.serviceAccountUser/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/composer.worker"]: Creation complete after 27s [id=project-7792d7ca-4ff6-4f
+52-91b/roles/composer.worker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/bigquery.connectionUser"]: Creation complete after 29s [id=project-7792d7ca
+-4ff6-4f52-91b/roles/bigquery.connectionUser/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/cloudfunctions.invoker"]: Creation complete after 27s [id=project-7792d7ca-
+4ff6-4f52-91b/roles/cloudfunctions.invoker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_pubsub_subscription.iot_stream_subscription: Still creating... [00m10s elapsed]
+google_project_iam_member.composer_roles["roles/run.invoker"]: Creation complete after 29s [id=project-7792d7ca-4ff6-4f52-91b/roles/run.invoker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]       
+google_project_iam_member.composer_roles["roles/dataproc.worker"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/artifactregistry.reader"]: Creation complete after 19s [id=project-7792d7ca
+-4ff6-4f52-91b/roles/artifactregistry.reader/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataflow.developer"]: Still creating... [00m20s elapsed]
+google_project_iam_member.composer_roles["roles/dataproc.worker"]: Creation complete after 22s [id=project-7792d7ca-4ff6-4f
+52-91b/roles/dataproc.worker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataflow.developer"]: Creation complete after 21s [id=project-7792d7ca-4ff6
+-4f52-91b/roles/dataflow.developer/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_pubsub_subscription.iot_stream_subscription: Creation complete after 17s [id=projects/project-7792d7ca-4ff6-4f52-91b/subscriptions/iot-stream-subscription]
+
+Apply complete! Resources: 37 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucket_name = "iot-data-lake-dk"
+pubsub_topic = "iot-stream-topic"
+service_account_email = "iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> terraform apply
+google_project_iam_member.pubsub_admin: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/pubsub.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_service_account.composer_service_account: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/serviceAccounts/composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_service_account.dataproc_job_sa: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/serviceAccounts/dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataflow_admin: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataflow.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.storage_admin: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/storage.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.bigquery_admin: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_pubsub_topic.iot_stream_topic: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/topics/iot-stream-topic]
+google_bigquery_dataset.silver: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/silver]
+google_storage_bucket.iot_data_lake: Refreshing state... [id=iot-data-lake-dk]
+google_bigquery_dataset.gold: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/gold]
+google_service_account.iot_platform_sa: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/serviceAccounts/iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_bigquery_table.predictive_alerts: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/gold/tables/predictive_alerts]
+google_bigquery_dataset.bronze: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/bronze]
+google_bigquery_table.machine_health_metrics: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/gold/tables/machine_health_metrics]
+google_bigquery_table.sensor_data: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/silver/tables/sensor_data]
+google_bigquery_table.machine_master: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/silver/tables/machine_master]
+google_pubsub_subscription.iot_stream_subscription: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/subscriptions/iot-stream-subscription]
+google_bigquery_table.sensor_data_raw: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/bronze/tables/sensor_data_raw]
+google_bigquery_table.machine_master_raw: Refreshing state... [id=projects/project-7792d7ca-4ff6-4f52-91b/datasets/bronze/tables/machine_master_raw]
+google_project_iam_member.composer_roles["roles/bigquery.connectionUser"]: Refreshing state... [id=project-7792d7ca-4ff6-4f
+52-91b/roles/bigquery.connectionUser/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataproc.editor"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.editor/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]       
+google_project_iam_member.composer_roles["roles/artifactregistry.reader"]: Refreshing state... [id=project-7792d7ca-4ff6-4f
+52-91b/roles/artifactregistry.reader/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/bigquery.jobUser"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.jobUser/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]     
+google_project_iam_member.composer_roles["roles/dataflow.developer"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataflow.developer/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com] 
+google_project_iam_member.composer_roles["roles/run.invoker"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/run.invoker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataproc.worker"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.worker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]       
+google_project_iam_member.composer_roles["roles/composer.worker"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/composer.worker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]       
+google_project_iam_member.composer_roles["roles/iam.serviceAccountUser"]: Refreshing state... [id=project-7792d7ca-4ff6-4f5
+2-91b/roles/iam.serviceAccountUser/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.composer_roles["roles/dataflow.worker"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataflow.worker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]       
+google_project_iam_member.composer_roles["roles/cloudfunctions.invoker"]: Refreshing state... [id=project-7792d7ca-4ff6-4f5
+2-91b/roles/cloudfunctions.invoker/serviceAccount:composer-service-account@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/monitoring.metricWriter"]: Refreshing state... [id=project-7792d7ca-4ff
+6-4f52-91b/roles/monitoring.metricWriter/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/logging.logWriter"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/logging.logWriter/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]        
+google_project_iam_member.dataproc_job_roles["roles/storage.objectAdmin"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/storage.objectAdmin/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]    
+google_project_iam_member.dataproc_job_roles["roles/bigquery.jobUser"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.jobUser/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/bigquery.dataEditor"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.dataEditor/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]    
+google_project_iam_member.dataproc_job_roles["roles/dataproc.editor"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.editor/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataproc_job_roles["roles/dataproc.worker"]: Refreshing state... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.worker/serviceAccount:dataproc-job-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the    
+following symbols:
+  + create
+  - destroy
+
+Terraform will perform the following actions:
+
+  # google_project_iam_member.bigquery_admin will be destroyed
+  # (because google_project_iam_member.bigquery_admin is not in configuration)
+  - resource "google_project_iam_member" "bigquery_admin" {
+      - etag    = "BwZSexHDSWE=" -> null
+      - id      = "project-7792d7ca-4ff6-4f52-91b/roles/bigquery.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - project = "project-7792d7ca-4ff6-4f52-91b" -> null
+      - role    = "roles/bigquery.admin" -> null
+    }
+
+  # google_project_iam_member.dataflow_admin will be destroyed
+  # (because google_project_iam_member.dataflow_admin is not in configuration)
+  - resource "google_project_iam_member" "dataflow_admin" {
+      - etag    = "BwZSexHDSWE=" -> null
+      - id      = "project-7792d7ca-4ff6-4f52-91b/roles/dataflow.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - project = "project-7792d7ca-4ff6-4f52-91b" -> null
+      - role    = "roles/dataflow.admin" -> null
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/bigquery.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/bigquery.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/composer.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/composer.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/composer.user"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/composer.user"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/compute.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/compute.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/compute.networkAdmin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/compute.networkAdmin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/dataflow.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataflow.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/dataproc.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/dataproc.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountAdmin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/iam.serviceAccountAdmin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountKeyAdmin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/iam.serviceAccountKeyAdmin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountUser"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/iam.serviceAccountUser"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/logging.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/logging.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/logging.logWriter"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/logging.logWriter"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/logging.viewer"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/logging.viewer"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/pubsub.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/pubsub.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/resourcemanager.projectIamAdmin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/resourcemanager.projectIamAdmin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/secretmanager.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/secretmanager.admin"
+    }
+
+  # google_project_iam_member.iot_platform_roles["roles/storage.admin"] will be created
+  + resource "google_project_iam_member" "iot_platform_roles" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+      + project = "project-7792d7ca-4ff6-4f52-91b"
+      + role    = "roles/storage.admin"
+    }
+
+  # google_project_iam_member.pubsub_admin will be destroyed
+  # (because google_project_iam_member.pubsub_admin is not in configuration)
+  - resource "google_project_iam_member" "pubsub_admin" {
+      - etag    = "BwZSexHDSWE=" -> null
+      - id      = "project-7792d7ca-4ff6-4f52-91b/roles/pubsub.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - project = "project-7792d7ca-4ff6-4f52-91b" -> null
+      - role    = "roles/pubsub.admin" -> null
+    }
+
+  # google_project_iam_member.storage_admin will be destroyed
+  # (because google_project_iam_member.storage_admin is not in configuration)
+  - resource "google_project_iam_member" "storage_admin" {
+      - etag    = "BwZSexHDSWE=" -> null
+      - id      = "project-7792d7ca-4ff6-4f52-91b/roles/storage.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - member  = "serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com" -> null
+      - project = "project-7792d7ca-4ff6-4f52-91b" -> null
+      - role    = "roles/storage.admin" -> null
+    }
+
+Plan: 17 to add, 0 to change, 4 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+google_project_iam_member.storage_admin: Destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/storage.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.bigquery_admin: Destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.pubsub_admin: Destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/pubsub.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.dataflow_admin: Destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/dataflow.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountKeyAdmin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/logging.logWriter"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/logging.viewer"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/composer.user"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountAdmin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/dataflow.admin"]: Creating...
+google_project_iam_member.bigquery_admin: Still destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/bi...-4ff6-4f52-91b.iam.gserviceaccount.com, 00m10s elapsed]
+google_project_iam_member.storage_admin: Still destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/st...-4ff6-4f52-91b.iam.gserviceaccount.com, 00m10s elapsed]
+google_project_iam_member.pubsub_admin: Still destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/pu...-4ff6-4f52-91b.iam.gserviceaccount.com, 00m10s elapsed]
+google_project_iam_member.dataflow_admin: Still destroying... [id=project-7792d7ca-4ff6-4f52-91b/roles/da...-4ff6-4f52-91b.iam.gserviceaccount.com, 00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountKeyAdmin"]: Still creating... [00m10s elapsed]       
+google_project_iam_member.iot_platform_roles["roles/logging.logWriter"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/logging.viewer"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountAdmin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/composer.user"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/dataflow.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/dataflow.admin"]: Creation complete after 12s [id=project-7792d7ca-4ff6-4f52-91b/roles/dataflow.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]      
+google_project_iam_member.iot_platform_roles["roles/compute.admin"]: Creating...
+google_project_iam_member.pubsub_admin: Destruction complete after 12s
+google_project_iam_member.iot_platform_roles["roles/composer.admin"]: Creating...
+google_project_iam_member.bigquery_admin: Destruction complete after 13s
+google_project_iam_member.iot_platform_roles["roles/storage.admin"]: Creating...
+google_project_iam_member.storage_admin: Destruction complete after 14s
+google_project_iam_member.iot_platform_roles["roles/logging.admin"]: Creating...
+google_project_iam_member.dataflow_admin: Destruction complete after 15s
+google_project_iam_member.iot_platform_roles["roles/resourcemanager.projectIamAdmin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountKeyAdmin"]: Creation complete after 15s [id=project-7
+792d7ca-4ff6-4f52-91b/roles/iam.serviceAccountKeyAdmin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/compute.networkAdmin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/logging.viewer"]: Creation complete after 16s [id=project-7792d7ca-4ff6-4f52-91b/roles/logging.viewer/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]      
+google_project_iam_member.iot_platform_roles["roles/dataproc.admin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountAdmin"]: Creation complete after 17s [id=project-7792
+d7ca-4ff6-4f52-91b/roles/iam.serviceAccountAdmin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/secretmanager.admin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/logging.logWriter"]: Creation complete after 18s [id=project-7792d7ca-4ff6-4f52-91b/roles/logging.logWriter/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/bigquery.admin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/composer.user"]: Creation complete after 19s [id=project-7792d7ca-4ff6-4f52-91b/roles/composer.user/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]        
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountUser"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/compute.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/composer.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/storage.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/logging.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/resourcemanager.projectIamAdmin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/compute.networkAdmin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/logging.admin"]: Creation complete after 12s [id=project-7792d7ca-4ff6-4f52-91b/roles/logging.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]        
+google_project_iam_member.iot_platform_roles["roles/pubsub.admin"]: Creating...
+google_project_iam_member.iot_platform_roles["roles/dataproc.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/secretmanager.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/bigquery.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountUser"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/compute.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/composer.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/storage.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/resourcemanager.projectIamAdmin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/compute.networkAdmin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/pubsub.admin"]: Still creating... [00m10s elapsed]
+google_project_iam_member.iot_platform_roles["roles/dataproc.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/secretmanager.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/bigquery.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountUser"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/compute.admin"]: Creation complete after 29s [id=project-7792d7ca-4ff6-4f52-91b/roles/compute.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]        
+google_project_iam_member.iot_platform_roles["roles/composer.admin"]: Creation complete after 29s [id=project-7792d7ca-4ff6-4f52-91b/roles/composer.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]      
+google_project_iam_member.iot_platform_roles["roles/storage.admin"]: Creation complete after 29s [id=project-7792d7ca-4ff6-4f52-91b/roles/storage.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]        
+google_project_iam_member.iot_platform_roles["roles/resourcemanager.projectIamAdmin"]: Still creating... [00m30s elapsed]
+google_project_iam_member.iot_platform_roles["roles/compute.networkAdmin"]: Still creating... [00m30s elapsed]
+google_project_iam_member.iot_platform_roles["roles/pubsub.admin"]: Still creating... [00m20s elapsed]
+google_project_iam_member.iot_platform_roles["roles/dataproc.admin"]: Still creating... [00m30s elapsed]
+google_project_iam_member.iot_platform_roles["roles/secretmanager.admin"]: Still creating... [00m30s elapsed]
+google_project_iam_member.iot_platform_roles["roles/bigquery.admin"]: Still creating... [00m30s elapsed]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountUser"]: Still creating... [00m30s elapsed]
+google_project_iam_member.iot_platform_roles["roles/secretmanager.admin"]: Creation complete after 33s [id=project-7792d7ca
+-4ff6-4f52-91b/roles/secretmanager.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/compute.networkAdmin"]: Creation complete after 35s [id=project-7792d7c
+a-4ff6-4f52-91b/roles/compute.networkAdmin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/dataproc.admin"]: Creation complete after 35s [id=project-7792d7ca-4ff6-4f52-91b/roles/dataproc.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]      
+google_project_iam_member.iot_platform_roles["roles/resourcemanager.projectIamAdmin"]: Creation complete after 37s [id=proj
+ect-7792d7ca-4ff6-4f52-91b/roles/resourcemanager.projectIamAdmin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/iam.serviceAccountUser"]: Creation complete after 34s [id=project-7792d
+7ca-4ff6-4f52-91b/roles/iam.serviceAccountUser/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+google_project_iam_member.iot_platform_roles["roles/bigquery.admin"]: Creation complete after 36s [id=project-7792d7ca-4ff6-4f52-91b/roles/bigquery.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]      
+google_project_iam_member.iot_platform_roles["roles/pubsub.admin"]: Creation complete after 28s [id=project-7792d7ca-4ff6-4f52-91b/roles/pubsub.admin/serviceAccount:iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com]
+
+Apply complete! Resources: 17 added, 0 changed, 4 destroyed.
+
+Outputs:
+
+bucket_name = "iot-data-lake-dk"
+pubsub_topic = "iot-stream-topic"
+service_account_email = "iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com"
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud services enable iamcredentials.googleapis.com
+Operation "operations/acat.p2-953364833508-a3eb632b-5d35-4722-93da-f1addd2a84df" finished successfully.
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud iam workload-identity-pools create github-pool \
+ERROR: (gcloud.iam.workload-identity-pools.create) unrecognized arguments: \ 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform>   --location="global" \
+At line:1 char:5
++   --location="global" \
++     ~
+Missing expression after unary operator '--'.
+At line:1 char:5
++   --location="global" \
++     ~~~~~~~~~~~~~~~~~
+Unexpected token 'location="global"' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform>   --display-name="GitHub Pool"
+At line:1 char:5
++   --display-name="GitHub Pool"
++     ~
+Missing expression after unary operator '--'.
+At line:1 char:5
++   --display-name="GitHub Pool"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'display-name="GitHub Pool"' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud iam workload-identity-pools create github-pool \
+ERROR: (gcloud.iam.workload-identity-pools.create) unrecognized arguments: \ 
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform>   --location="global" \
+At line:1 char:5
++   --location="global" \
++     ~
+Missing expression after unary operator '--'.
+At line:1 char:5
++   --location="global" \
++     ~~~~~~~~~~~~~~~~~
+Unexpected token 'location="global"' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+ 
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud iam workload-identity-pools create github-pool --location="global" --display-name="GitHub Pool"
+Created workload identity pool [github-pool].
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud projects describe project-7792d7ca-4ff6-4f52-91b --format="value(projectNumber)"
+953364833508
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud iam workload-identity-pools providers create-oidc github-provider --location="global" --workload-identity-pool="github-pool" --display-name="GitHub Provider" --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository" --issuer-uri="https://token.actions.githubusercontent.com"
+ERROR: (gcloud.iam.workload-identity-pools.providers.create-oidc) INVALID_ARGUMENT: The attribute condition must reference 
+one of the provider's claims. For more information, see https://cloud.google.com/iam/docs/workload-identity-federation-with-deployment-pipelines#conditions
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud iam workload-identity-pools providers create-oidc github-provider --location="global" --workload-identity-pool="github-pool" --display-name="GitHub Provider" --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository" --attribute-condition="assertion.repository=='25007839d/iot-data-engineering-platform'" --issuer-uri="https://token.actions.githubusercontent.com"
+Created workload identity pool provider [github-provider].
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud projects describe project-7792d7ca-4ff6-4f52-91b --format="value(projectNumber)"
+953364833508
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> gcloud iam service-accounts add-iam-policy-binding iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com --role="roles/iam.workloadIdentityUser" --member="principalSet://iam.googleapis.com/projects/953364833508/locations/global/workloadIdentityPools/github-pool/attribute.repository/25007839d/iot-data-engineering-platform"
+Updated IAM policy for serviceAccount [iot-platform-sa@project-7792d7ca-4ff6-4f52-91b.iam.gserviceaccount.com].
+bindings:
+- members:
+  - principalSet://iam.googleapis.com/projects/953364833508/locations/global/workloadIdentityPools/github-pool/attribute.repository/25007839d/iot-data-engineering-platform
+  role: roles/iam.workloadIdentityUser
+etag: BwZSe2TBGyU=
+version: 1
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> git rm -r --cached src/terraform/.terraform
+fatal: pathspec 'src/terraform/.terraform' did not match any files
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src\terraform> cd ..
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform\src> cd ..
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform> git rm -r --cached src/terraform/.terraform
+rm 'src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/LICENSE.txt'
+rm 'src/terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/windows_amd64/terraform-provider-google_v5.45.2_x5.exe'
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform> git rm --cached src/terraform/terraform.tfstate
+rm 'src/terraform/terraform.tfstate'
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform> git rm --cached src/terraform/terraform.tfstate.backup
+rm 'src/terraform/terraform.tfstate.backup'
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform> Remove-Item -Recurse -Force .git
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform> gcloud services enable iam.googleapis.com pubsub.googleapis.com bigquery.googleapis.com storage.googleapis.com composer.googleapis.com dataflow.googleapis.com dataproc.googleapis.com cloudresourcemanager.googleapis.com iamcredentials.googleapis.com
+Operation "operations/acf.p2-953364833508-7b4f56ab-824a-48e1-a7ad-90350e74c0f1" finished successfully.
+PS D:\Socourse\DE1\iot_api_dk\iot-data-engineering-platform> 
+
+
