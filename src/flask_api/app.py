@@ -41,7 +41,7 @@ conn.commit()
 
 def sensor():
 
-    data = request.form
+    data = request.get_json()
 
     temperature = data.get("temperature")
 
