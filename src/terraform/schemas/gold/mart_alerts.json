@@ -1,32 +1,12 @@
 [
-  {
-    "name": "alert_id",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "machine_id",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "risk_level",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "prediction_score",
-    "type": "FLOAT",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "predicted_issue",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "alert_time",
-    "type": "TIMESTAMP",
-    "mode": "NULLABLE"
-  }
+    {"name": "alert_id", "type": "STRING"},
+    {"name": "machine_id", "type": "STRING"},
+    {"name": "machine_name", "type": "STRING"},
+    {"name": "location", "type": "STRING"},
+    {"name": "machine_owner_name", "type": "STRING"},
+    {"name": "alert_type", "type": "STRING"},
+    {"name": "alert_severity", "type": "STRING"},
+    {"name": "alert_message", "type": "STRING"},
+    {"name": "alert_timestamp", "type": "TIMESTAMP"},
+    {"name": "email_sent_flag", "type": "BOOL"}
 ]

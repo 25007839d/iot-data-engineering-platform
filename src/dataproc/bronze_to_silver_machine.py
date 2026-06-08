@@ -1,0 +1,41 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import upper
+from pyspark.sql.functions import trim
+from pyspark.sql.functions import datediff
+from pyspark.sql.functions import current_date
+
+spark = (
+    SparkSession.builder
+    .appName("bronze_to_silver_machine")
+    .getOrCreate()
+)
+
+df = spark.read \
+.format("bigquery") \
+.option(
+    "table",
+    "project_id.bronze.bronze_machine_master"
+) \
+.load()
+
+df = df.withColumn(
+    "machine_name",
+    upper(trim("machine_name"))
+)
+
+df = df.withColumn(
+    "machine_age_days",
+    datediff(
+        current_date(),
+        df.install_date
+    )
+)
+
+df.write \
+.mode("overwrite") \
+.format("bigquery") \
+.option(
+    "table",
+    "project_id.silver.silver_machine_master"
+) \
+.save()

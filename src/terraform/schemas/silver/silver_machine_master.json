@@ -1,32 +1,10 @@
 [
-  {
-    "name": "machine_id",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "machine_name",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "location",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "machine_type",
-    "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "install_date",
-    "type": "DATE",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "updated_at",
-    "type": "TIMESTAMP",
-    "mode": "NULLABLE"
-  }
+    {"name": "machine_id", "type": "STRING"},
+    {"name": "machine_name", "type": "STRING"},
+    {"name": "location", "type": "STRING"},
+    {"name": "machine_type", "type": "STRING"},
+    {"name": "install_date", "type": "DATE"},
+    {"name": "machine_age_days", "type": "INT64"},
+    {"name": "installation_engineer_name", "type": "STRING"},
+    {"name": "machine_owner_name", "type": "STRING"}
 ]
