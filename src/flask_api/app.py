@@ -66,9 +66,14 @@ def sensor():
         current
     )
 
-    cursor.execute(query, values)
+    try:
+        cursor.execute(query, values)
+        conn.commit()
 
-    conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print("ERROR:", str(e))
+        return jsonify({"error": str(e)}), 500
 
     return jsonify({
         "message": "success",
