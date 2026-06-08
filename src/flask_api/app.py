@@ -72,7 +72,7 @@ def sensor():
 
     return jsonify({
         "message": "success",
-        "received_data": data
+        "received_data": data.to_dict()
     })
 
 # ---------------- DASHBOARD ---------------- #
