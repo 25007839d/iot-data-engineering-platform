@@ -144,9 +144,10 @@ def dashboard():
 
             <tr>
                 <th>ID</th>
+                <th>Machine_id</th>
                 <th>Temperature</th>
-                <th>Vibration</th>
-                <th>Current</th>
+                <th>Object_detected_flag</th>
+                <th>Buzzer_active_flag</th>
                 <th>Created At</th>
             </tr>
 
@@ -158,10 +159,11 @@ def dashboard():
 
         <tr>
             <td>{row[0]}</td>
-            <td>{row[1]} °C</td>
-            <td>{row[2]}</td>
-            <td>{row[3]} A</td>
-            <td>{row[4]}</td>
+            <td>{row[1]} </td>
+            <td>{row[2]} °C</td>
+            <td>{row[3]}</td>
+            <td>{row[4]} A</td>
+            <td>{row[5]}</td>
         </tr>
 
         """
