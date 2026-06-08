@@ -1,0 +1,13 @@
+[
+    {"name": "event_date", "type": "DATE"},
+    {"name": "machine_id", "type": "STRING"},
+    {"name": "machine_name", "type": "STRING"},
+    {"name": "location", "type": "STRING"},
+    {"name": "machine_type", "type": "STRING"},
+    {"name": "avg_temperature", "type": "FLOAT64"},
+    {"name": "max_temperature", "type": "FLOAT64"},
+    {"name": "min_temperature", "type": "FLOAT64"},
+    {"name": "object_detection_count", "type": "INT64"},
+    {"name": "buzzer_count", "type": "INT64"},
+    {"name": "total_events", "type": "INT64"}
+]

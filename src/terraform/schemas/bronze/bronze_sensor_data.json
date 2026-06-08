@@ -1,0 +1,10 @@
+
+[
+  {"name": "id", "type": "INT64", "mode": "REQUIRED"},
+  {"name": "machine_id", "type": "STRING", "mode": "REQUIRED"},
+  {"name": "temperature", "type": "FLOAT64"},
+  {"name": "object_detected_flag", "type": "BOOL"},
+  {"name": "buzzer_active_flag", "type": "BOOL"},
+  {"name": "created_at", "type": "TIMESTAMP"},
+  {"name": "ingestion_timestamp", "type": "TIMESTAMP"}
+]
