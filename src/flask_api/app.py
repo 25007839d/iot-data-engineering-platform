@@ -55,7 +55,7 @@ def sensor():
     INSERT INTO sensor_data_v1
     (machine_id, temperature, object_detected_flag, buzzer_active_flag)
 
-    VALUES (%s, %s, %s,%s)
+    VALUES (%s, %s, %s, %s)
 
     """
 
