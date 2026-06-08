@@ -8,6 +8,7 @@
 #define SENSOR_PIN 18      // LM393 DO Pin
 #define BUZZER_PIN 23
 
+const char* MACHINE_ID = "MACHINE_001";
 // WiFi Details
 const char* ssid = "AirFiber-cha5Es";
 const char* password = "Pass@123";
@@ -94,6 +95,7 @@ void loop() {
 
   // Create JSON Payload
   String payload = "{";
+  payload += "\"machine_id\":\"" + String(MACHINE_ID) + "\",";
   payload += "\"temperature\":" + String(temperature, 2) + ",";
   payload += "\"vibration\":" + String(vibration) + ",";
   payload += "\"current\":" + String(current);

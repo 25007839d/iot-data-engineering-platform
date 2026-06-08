@@ -53,7 +53,7 @@ def sensor():
     query = """
 
     INSERT INTO sensor_data_v1
-    (machine_id, temperature, vibration, current_value)
+    (machine_id, temperature, object_detected_flag, buzzer_active_flag)
 
     VALUES (%s, %s, %s)
 
