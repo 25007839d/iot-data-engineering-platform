@@ -14,9 +14,11 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
+# Clear any aborted transaction
+conn.rollback()
+
 # Create table automatically
 cursor.execute("""
-
 CREATE TABLE IF NOT EXISTS sensor_data_v1 (
 
     id BIGSERIAL PRIMARY KEY,
@@ -32,7 +34,6 @@ CREATE TABLE IF NOT EXISTS sensor_data_v1 (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 )
-
 """)
 
 conn.commit()
@@ -40,84 +41,92 @@ conn.commit()
 # ---------------- API ---------------- #
 
 @app.route('/sensor', methods=['POST'])
-
 def sensor():
 
-    data = request.get_json()
-
-    machine_id = data.get("machine_id")
-    temperature = data.get("temperature")
-    vibration = data.get("vibration")
-    current = data.get("current")
-
-    query = """
-
-    INSERT INTO sensor_data_v1
-    (machine_id, temperature, object_detected_flag, buzzer_active_flag)
-
-    VALUES (%s, %s, %s, %s)
-
-    """
-
-    values = (
-        machine_id,
-        temperature,
-        vibration,
-        current
-    )
-
     try:
+
+        data = request.get_json()
+
+        print("DATA RECEIVED:", data)
+
+        machine_id = data.get("machine_id")
+        temperature = data.get("temperature")
+
+        # ESP32 sends vibration/current as 0 or 1
+        object_detected_flag = bool(data.get("vibration"))
+        buzzer_active_flag = bool(data.get("current"))
+
+        query = """
+        INSERT INTO sensor_data_v1
+        (
+            machine_id,
+            temperature,
+            object_detected_flag,
+            buzzer_active_flag
+        )
+        VALUES (%s, %s, %s, %s)
+        """
+
+        values = (
+            machine_id,
+            temperature,
+            object_detected_flag,
+            buzzer_active_flag
+        )
+
+        print("VALUES:", values)
+
         cursor.execute(query, values)
         conn.commit()
 
-    except Exception as e:
-        conn.rollback()
-        print("ERROR:", str(e))
-        return jsonify({"error": str(e)}), 500
+        return jsonify({
+            "message": "success",
+            "received_data": data
+        })
 
-    return jsonify({
-        "message": "success",
-        "received_data": data.to_dict()
-    })
+    except Exception as e:
+
+        conn.rollback()
+
+        print("ACTUAL ERROR:", repr(e))
+
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
 
 # ---------------- DASHBOARD ---------------- #
 
 @app.route('/dashboard')
-
 def dashboard():
 
-    query = """
+    try:
 
-    SELECT *
-    FROM sensor_data_v1
-    ORDER BY created_at DESC
+        cursor.execute("""
+        SELECT *
+        FROM sensor_data_v1
+        ORDER BY created_at DESC
+        """)
 
-    """
+        rows = cursor.fetchall()
 
-    cursor.execute(query)
+    except Exception as e:
 
-    rows = cursor.fetchall()
+        conn.rollback()
+
+        return f"Dashboard Error: {str(e)}"
 
     html = """
-
     <html>
-
     <head>
-
         <title>IoT Dashboard</title>
-
         <meta http-equiv="refresh" content="5">
 
         <style>
-
             body{
                 font-family: Arial;
                 background:#f4f4f4;
                 padding:20px;
-            }
-
-            h1{
-                color:#333;
             }
 
             table{
@@ -136,51 +145,44 @@ def dashboard():
                 background:#007BFF;
                 color:white;
             }
-
         </style>
 
     </head>
 
     <body>
 
-        <h1>Live IoT Sensor Dashboard</h1>
+    <h1>Live IoT Sensor Dashboard</h1>
 
-        <table>
+    <table>
 
-            <tr>
-                <th>ID</th>
-                <th>Machine_id</th>
-                <th>Temperature</th>
-                <th>Object_detected_flag</th>
-                <th>Buzzer_active_flag</th>
-                <th>Created At</th>
-            </tr>
-
+        <tr>
+            <th>ID</th>
+            <th>Machine ID</th>
+            <th>Temperature</th>
+            <th>Object Detected</th>
+            <th>Buzzer Active</th>
+            <th>Created At</th>
+        </tr>
     """
 
     for row in rows:
 
         html += f"""
-
         <tr>
             <td>{row[0]}</td>
-            <td>{row[1]} </td>
+            <td>{row[1]}</td>
             <td>{row[2]} °C</td>
             <td>{row[3]}</td>
-            <td>{row[4]} A</td>
+            <td>{row[4]}</td>
             <td>{row[5]}</td>
         </tr>
-
         """
 
     html += """
-
-        </table>
+    </table>
 
     </body>
-
     </html>
-
     """
 
     return html
@@ -188,10 +190,8 @@ def dashboard():
 # ---------------- HOME ---------------- #
 
 @app.route('/')
-
 def home():
-
     return "IoT API Running Successfully"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
