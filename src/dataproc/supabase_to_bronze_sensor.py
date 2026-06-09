@@ -11,7 +11,9 @@ spark = (
 )
 # jar file uploaded in gcs at  the time of jo submit we have to pass
 # gs://iot-data-lake-dk/jars/postgresql-42.7.3.jar
-jdbc_url = "jdbc:postgresql://aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres"
+jdbc_url = (
+    "jdbc:postgresql://aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres?sslmode=require"
+)
 
 properties = {
     "user": "postgres.noatyhntldvoisaqxvip",

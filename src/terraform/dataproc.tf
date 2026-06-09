@@ -6,23 +6,24 @@ resource "google_dataproc_cluster" "iot_cluster" {
   cluster_config {
 
     gce_cluster_config {
+
       zone = var.zone
+
+      service_account = google_service_account.dataproc_job_sa.email
+
+      internal_ip_only = false
     }
 
     master_config {
 
       num_instances = 1
 
-      machine_type = "n4-standard-2"
+      machine_type = "e2-standard-2"
 
       disk_config {
-        boot_disk_type    = "pd-balanced"
+
         boot_disk_size_gb = 30
       }
-    }
-
-    software_config {
-      image_version = "2.2-debian12"
     }
   }
 }
