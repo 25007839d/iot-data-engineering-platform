@@ -1,0 +1,47 @@
+
+
+------------render - login by github
+https://iot-api-6vuj.onrender.com/
+
+
+api
+https://iot-api-6vuj.onrender.com/sensor
+
+dashboard
+https://iot-api-6vuj.onrender.com/dashboard
+
+==========supabase========db
+https://supabase.com/dashboard/project/noatyhntldvoisaqxvip/database/schemas
+
+25007839d@gmail.com
+
+Pass: RWX8smcCG4cG
+
+
+postgresql://postgres:[YOUR-PASSWORD]@db.noatyhntldvoisaqxvip.supabase.co:5432/postgres
+host:db.noatyhntldvoisaqxvip.supabase.co
+
+port:
+5432
+
+database:
+postgres
+
+user:
+postgres
+
+-----session polar
+host:
+aws-1-ap-southeast-1.pooler.supabase.com
+
+port:
+5432
+
+database:
+postgres
+
+user:
+postgres.noatyhntldvoisaqxvip
+
+
+
