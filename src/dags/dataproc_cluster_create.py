@@ -23,7 +23,7 @@ CLUSTER_CONFIG = {
 
         "num_instances": 1,
 
-        "machine_type_uri": "e2-standard-2",
+        "machine_type_uri": "e2-standard-4",
 
         "disk_config": {
 
