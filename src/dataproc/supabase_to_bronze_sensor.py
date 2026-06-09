@@ -64,7 +64,25 @@ if len(records) == 0:
     exit(0)
 
 # ---------------------------------------------------
-# Convert JSON -> Spark DataFrame
+
+
+from pyspark.sql.functions import (
+    current_timestamp,
+    col,
+    to_timestamp
+)
+from pyspark.sql.types import (
+    StructType,
+    StructField,
+    LongType,
+    StringType,
+    DoubleType,
+    BooleanType,
+    TimestampType
+)
+
+# ---------------------------------------------------
+# Create DataFrame
 # ---------------------------------------------------
 df = spark.createDataFrame(records)
 
@@ -76,43 +94,20 @@ df = df.withColumn(
     current_timestamp()
 )
 
-from pyspark.sql.functions import (
-    col,
-    to_timestamp
-)
-
+# ---------------------------------------------------
+# Data Type Mapping
+# ---------------------------------------------------
 df = (
-    df.filter(col("id").isNotNull()).filter(col("machine_id").isNotNull())
-
-    # Type mapping
-    .withColumn(
-        "id",
-        col("id").cast("long")
-    )
-    .withColumn(
-        "machine_id",
-        col("machine_id").cast("string")
-    )
-    .withColumn(
-        "temperature",
-        col("temperature").cast("double")
-    )
-    .withColumn(
-        "object_detected_flag",
-        col("object_detected_flag").cast("boolean")
-    )
-    .withColumn(
-        "buzzer_active_flag",
-        col("buzzer_active_flag").cast("boolean")
-    )
-    .withColumn(
-        "created_at",
-        to_timestamp(col("created_at"))
-    )
-    .withColumn(
-        "ingestion_timestamp",
-        to_timestamp(col("ingestion_timestamp"))
-    )
+    df
+    .filter(col("id").isNotNull())
+    .filter(col("machine_id").isNotNull())
+    .withColumn("id", col("id").cast("long"))
+    .withColumn("machine_id", col("machine_id").cast("string"))
+    .withColumn("temperature", col("temperature").cast("double"))
+    .withColumn("object_detected_flag", col("object_detected_flag").cast("boolean"))
+    .withColumn("buzzer_active_flag", col("buzzer_active_flag").cast("boolean"))
+    .withColumn("created_at", to_timestamp(col("created_at")))
+    .withColumn("ingestion_timestamp", col("ingestion_timestamp").cast("timestamp"))
     .select(
         "id",
         "machine_id",
@@ -124,30 +119,45 @@ df = (
     )
 )
 
-print("===== FINAL SCHEMA =====")
-
 # ---------------------------------------------------
-print(f"Total Records: {df.count()}")
+# Explicit BigQuery Schema
+# ---------------------------------------------------
+target_schema = StructType([
+    StructField("id", LongType(), False),                    # REQUIRED
+    StructField("machine_id", StringType(), False),          # REQUIRED
+    StructField("temperature", DoubleType(), True),
+    StructField("object_detected_flag", BooleanType(), True),
+    StructField("buzzer_active_flag", BooleanType(), True),
+    StructField("created_at", TimestampType(), True),
+    StructField("ingestion_timestamp", TimestampType(), True)
+])
 
+# Recreate DataFrame with required fields
+df = spark.createDataFrame(
+    df.rdd,
+    schema=target_schema
+)
+
+print("===== FINAL SCHEMA =====")
 df.printSchema()
 
+print(f"Total Records: {df.count()}")
 df.show(10, truncate=False)
 
 # ---------------------------------------------------
 # Write to BigQuery Bronze Layer
 # ---------------------------------------------------
 df.write \
-.mode("append") \
-.format("bigquery") \
-.option(
-    "table",
-    "project-7792d7ca-4ff6-4f52-91b.bronze.bronze_sensor_data"
-) \
-.option(
-    "temporaryGcsBucket",
-    "iot-data-lake-dk"
-) \
-.save()
+    .mode("append") \
+    .format("bigquery") \
+    .option(
+        "table",
+        "project-7792d7ca-4ff6-4f52-91b.bronze.bronze_sensor_data"
+    ) \
+    .option(
+        "temporaryGcsBucket",
+        "iot-data-lake-dk"
+    ) \
+    .save()
 
 print("Data loaded successfully into Bronze Layer")
-
