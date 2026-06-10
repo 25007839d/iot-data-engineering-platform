@@ -80,15 +80,19 @@ locals {
 
   dataproc_job_roles = [
 
-    "roles/dataproc.editor",
-    "roles/dataproc.worker",
-    "roles/storage.objectAdmin",
-    "roles/bigquery.dataEditor",
-    "roles/bigquery.jobUser",
-    "roles/logging.logWriter",
-    "roles/monitoring.metricWriter"
+  "roles/dataproc.editor",
+  "roles/dataproc.worker",
 
-  ]
+  "roles/storage.objectAdmin",
+
+  "roles/bigquery.dataEditor",
+  "roles/bigquery.jobUser",
+  "roles/bigquery.readSessionUser",
+
+  "roles/logging.logWriter",
+  "roles/monitoring.metricWriter"
+
+]
 
 }
 

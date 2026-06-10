@@ -14,7 +14,7 @@ df = spark.read \
 .format("bigquery") \
 .option(
     "table",
-    "project_id.bronze.bronze_machine_master"
+    "project-7792d7ca-4ff6-4f52-91b.bronze.bronze_machine_master"
 ) \
 .load()
 
@@ -35,7 +35,11 @@ df.write \
 .mode("overwrite") \
 .format("bigquery") \
 .option(
+    "temporaryGcsBucket",
+    "iot-data-lake-dk"
+)\
+.option(
     "table",
-    "project_id.silver.silver_machine_master"
+    "project-7792d7ca-4ff6-4f52-91b.silver.silver_machine_master"
 ) \
 .save()
