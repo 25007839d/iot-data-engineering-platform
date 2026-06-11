@@ -1,0 +1,13 @@
+terraform state rm google_bigquery_dataset.bronze
+terraform state rm google_bigquery_dataset.silver
+terraform state rm google_bigquery_dataset.gold
+
+terraform state rm google_bigquery_table.bronze_machine_master
+terraform state rm google_bigquery_table.bronze_sensor_data
+
+terraform state rm google_bigquery_table.silver_machine_master
+terraform state rm google_bigquery_table.silver_sensor_data
+
+terraform state rm google_bigquery_table.mart_alerts
+terraform state rm google_bigquery_table.mart_machine_daily_kpi
+terraform state rm google_bigquery_table.mart_ml_featuresyes

@@ -80,6 +80,12 @@ from pyspark.sql.types import (
     BooleanType,
     TimestampType
 )
+# ---------------------------------------------------
+# Fix Temperature Data Type
+# ---------------------------------------------------
+for record in records:
+    if record.get("temperature") is not None:
+        record["temperature"] = float(record["temperature"])
 
 # ---------------------------------------------------
 # Create DataFrame

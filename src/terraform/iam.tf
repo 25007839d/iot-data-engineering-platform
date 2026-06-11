@@ -54,7 +54,9 @@ locals {
     "roles/dataflow.worker",
     "roles/iam.serviceAccountUser",
     "roles/dataproc.editor",
-    "roles/dataproc.worker"
+    "roles/dataproc.worker",
+    "roles/bigquery.dataViewer",
+    "roles/bigquery.readSessionUser"
 
   ]
 
